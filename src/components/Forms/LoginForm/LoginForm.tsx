@@ -26,10 +26,10 @@ const LoginForm = () => {
   } = useForm<ILoginForm>({
     mode: 'onChange',
     resolver: yupResolver(LoginSchema),
-    defaultValues: {
-      email: 'maria.oliveira@email.com',
-      password: '12345678',
-    },
+    // defaultValues: {
+    //   email: 'maria.oliveira@email.com',
+    //   password: '12345678',
+    // },
   });
   const passwordValue = watch('password');
 
