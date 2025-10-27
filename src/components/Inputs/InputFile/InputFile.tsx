@@ -42,15 +42,28 @@ const InputFile: ForwardRefRenderFunction<HTMLInputElement, Props> = (
   );
   const { DocDownload } = useDocDownload();
 
-  const fileLink =
-    file instanceof FileList && file
-      ? URL.createObjectURL(file.item(0) as File)
-      : urlConvert(file?.url);
-  const fileLinkArray = fileLink.split('.');
-  const typeFileVerify = ['gif', 'jpeg', 'jpg', 'png'].includes(
-    fileLinkArray[fileLinkArray.length - 1],
-  );
-  console.log({ fileLinkArray, typeFileVerify, fileLink });
+  const getFileLink = () => {
+    if (file instanceof FileList && file.length > 0) {
+      const fileObj = file.item(0);
+      if (fileObj instanceof Blob) {
+        return URL.createObjectURL(fileObj);
+      }
+    }
+
+    if (file && typeof file === 'object' && 'url' in file) {
+      return urlConvert((file as IFile).url);
+    }
+
+    return undefined;
+  };
+
+  const fileLink = getFileLink();
+  const fileLinkArray = fileLink ? fileLink.split('.') : [];
+  const typeFileVerify = fileLink
+    ? ['gif', 'jpeg', 'jpg', 'png'].includes(
+        fileLinkArray[fileLinkArray.length - 1],
+      )
+    : false;
 
   return (
     <div
