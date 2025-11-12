@@ -1,13 +1,21 @@
 'use client';
 
 import React from 'react';
-import LoginForm from '@/components/Forms/LoginForm/LoginForm';
 import ResetPasswordForm from '@/components/Forms/ResetPasswordForm/ResetPasswordForm';
+import { useRouter } from 'next/navigation';
 
 const ResetPasswordPage = () => {
+  const router = useRouter();
   return (
     <main className="bg-primary2 flex">
-      <div className="w-[375px] bg-secondary rounded-r-[50px] h-dvh p-[36px]! flex flex-col items-start justify-center no-scrollbar overflow-auto">
+      <div className="relative w-[375px] bg-secondary rounded-r-[50px] h-dvh p-[36px]! flex flex-col items-start justify-center no-scrollbar overflow-auto">
+        <button
+          className="absolute top-[20px] left-[20px]"
+          type="button"
+          onClick={() => router.push('/')}
+        >
+          <img src="/img/icons/back_arrow.svg" alt="Voltar" />
+        </button>
         <span className="block text-[40px] text-primary font-black">RH+</span>
         <span className="block text-[22px] text-primary font-normal mb-[39px]!">
           Colaborador
