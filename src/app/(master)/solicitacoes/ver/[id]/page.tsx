@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation';
 import SolicitationForm from '@/components/Forms/SolicitationForm/SolicitationForm';
 import protectedRoute from '@/hooks/protectedRoute';
 import { useRequest } from '@/services/requests/requests/getRequests';
+import Loading from '@/components/Loading/Loading';
 
 const ViewSolicitationPage = () => {
   const params = useParams();
@@ -13,7 +14,7 @@ const ViewSolicitationPage = () => {
   const { data } = useRequest(id as string);
 
   if (!data) {
-    return null;
+    return <Loading />;
   }
 
   return <SolicitationForm type="view" formData={data} />;

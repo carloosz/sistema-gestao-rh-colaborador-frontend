@@ -3,12 +3,13 @@
 import protectedRoute from '@/hooks/protectedRoute';
 import CollaboratorForm from '@/components/Forms/CollaboratorForm/CollaboratorForm';
 import { useAuth } from '@/hooks/useAuth';
+import Loading from '@/components/Loading/Loading';
 
 const MyInformationPage = () => {
   const { myInfo } = useAuth();
 
   if (!myInfo) {
-    return null;
+    return <Loading/>;
   }
 
   return (

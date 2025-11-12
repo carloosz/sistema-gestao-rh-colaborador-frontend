@@ -7,12 +7,13 @@ import protectedRoute from '@/hooks/protectedRoute';
 import { useRequest } from '@/services/requests/requests/getRequests';
 import CollaboratorForm from '@/components/Forms/CollaboratorForm/CollaboratorForm';
 import { useAuth } from '@/hooks/useAuth';
+import Loading from '@/components/Loading/Loading';
 
 const MyInformationEditPage = () => {
   const { myInfo } = useAuth();
 
   if (!myInfo) {
-    return null;
+    return <Loading />;
   }
 
   return (

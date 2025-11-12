@@ -9,6 +9,7 @@ import { useRequests } from '@/services/requests/requests/getRequests';
 import { IRequestList } from '@/interfaces/Request';
 import { useAuth } from '@/hooks/useAuth';
 import ModalRequest from '@/components/Modals/ModalRequest/ModalRequest';
+import Loading from '@/components/Loading/Loading';
 
 const dataToRows = (data: IRequestList) => {
   return data?.requests?.map(item => ({
@@ -30,13 +31,14 @@ const RequestsPage = () => {
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
 
-  const { data } = useRequests({
+  const { data, isFetching } = useRequests({
     page: currentPage,
     pageSize: 9,
   });
 
   return (
     <div className="flex flex-col pt-[37px]!">
+      {(isFetching || !data) && <Loading />}
       {openCreateRequestModal && (
         <ModalRequest onClose={() => setOpenCreateRequestModal(false)} />
       )}

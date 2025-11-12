@@ -55,15 +55,15 @@ const TableComponent = ({
 }: Props) => {
   return (
     <div className="flex flex-col gap-[16px">
-      <div className="m-h-[38rem] overflow-x-auto">
-        <table className="table-fixed m-w-[1200px] w-full">
+      <div className="m-h-[38rem]">
+        <table className="table-fixed min-w-[1200px] w-full">
           <thead>
             <tr>
               {headers?.map((header, index) => (
                 <th
                   key={index}
                   className={twMerge(
-                    'pb-[15px]!',
+                    'pb-[15px]! whitespace-nowrap',
                     header?.width
                       ? `min-w-[${header?.width}] max-w-[${header?.width}] `
                       : '',
