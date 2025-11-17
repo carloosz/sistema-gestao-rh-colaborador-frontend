@@ -81,7 +81,7 @@ const SolicitationForm = ({ type = 'register', formData }: Props) => {
               Dados da solicitação
             </span>
             <div className="flex flex-col gap-[45px]">
-              <div className="grid grid-cols-3 gap-x-[37px] gap-y-[30px]">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-[37px] gap-y-[30px]">
                 <Input
                   customClassNames="max-w-[286px]"
                   readOnly={type === 'view'}

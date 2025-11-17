@@ -20,19 +20,23 @@ const Header = ({ title, id, buttons, onBack }: Props) => {
   };
 
   return (
-    <header className="pt-[72px]! pb-[20px]! px-[30px]! flex justify-between rounded-[10px] bg-secondary z-9">
-      <div className="flex gap-[16px] items-center">
+    <header className="pt-[72px]! pb-[20px]! px-[30px]! flex flex-col lg:flex-row justify-between rounded-[10px] gap-[10px] bg-secondary z-9">
+      <div className="flex flex-col sm:flex-row gap-[16px] items-start sm:items-center">
         <button type="button" onClick={handleBack}>
           <img src="/img/icons/back_arrow.svg" alt="Voltar" />
         </button>
-        <h1 className="text-[40px] font-normal text-#0C0C0C">
+        <h1 className="text-[24px] lg:text-[40px] font-normal text-#0C0C0C">
           {title}{' '}
           {id && (
-            <span className="text-[40px] text-#0C0C0C font-normal">#{id}</span>
+            <span className="text-[24px] lg:text-[40px] text-#0C0C0C font-normal">
+              #{id}
+            </span>
           )}
         </h1>
       </div>
-      <div className="flex gap-[16px] items-center">{buttons}</div>
+      <div className="flex flex-col sm:flex-row gap-[16px] justify-end sm:items-center">
+        {buttons}
+      </div>
     </header>
   );
 };

@@ -54,8 +54,8 @@ const TableComponent = ({
   handleSort,
 }: Props) => {
   return (
-    <div className="flex flex-col gap-[16px">
-      <div className="m-h-[38rem]">
+    <div className="flex flex-col gap-[16px]">
+      <div className="m-h-[38rem] overflow-x-auto">
         <table className="table-fixed min-w-[1200px] w-full">
           <thead>
             <tr>
@@ -106,7 +106,7 @@ const TableComponent = ({
                 {row.data.map((info, index2) => (
                   <td
                     key={`td_${index}_${index2}`}
-                    className={'pb-[15px]!'}
+                    className={'pb-[15px]! whitespace-nowrap'}
                     title={info?.text}
                   >
                     <span

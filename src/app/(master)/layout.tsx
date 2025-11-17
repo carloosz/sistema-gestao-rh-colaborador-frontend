@@ -14,13 +14,13 @@ const MasterRootLayout = ({
   return (
     <main
       className={twMerge(
-        'h-dvh  overflow-auto',
+        'h-dvh pb-[60px]! lg:pb-[0]! overflow-auto',
         pathName === '/solicitacoes' ? 'bg-secondary' : 'bg-primary2',
       )}
     >
       <Sidebar />
       <div>
-        <div className="min-w-[1200px] pl-[136px]! pr-[24px]! pt-[32px]!">
+        <div className="lg:min-w-[1200px] p-[24px]! lg:pl-[136px]! lg:pr-[24px]!lg:pt-[32px]!">
           {children}
         </div>
       </div>

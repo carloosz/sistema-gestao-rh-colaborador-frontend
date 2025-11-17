@@ -108,7 +108,7 @@ const CollaboratorForm = ({ type = 'view', formData }: Props) => {
             >
               Dados pessoais
             </span>
-            <div className="grid grid-cols-3 gap-x-[37px] gap-y-[30px]">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-[37px] gap-y-[30px]">
               <Input
                 customClassNames="max-w-[286px]"
                 readOnly={type === 'view'}
@@ -173,7 +173,7 @@ const CollaboratorForm = ({ type = 'view', formData }: Props) => {
             >
               Endereço
             </span>
-            <div className="grid grid-cols-3 gap-x-[37px] gap-y-[30px]">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-x-[37px] gap-y-[30px]">
               <Input
                 customClassNames="max-w-[286px]"
                 readOnly={type === 'view'}

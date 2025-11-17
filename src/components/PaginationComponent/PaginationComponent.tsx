@@ -30,7 +30,7 @@ const PaginationComponent = ({
   };
 
   return (
-    <div className="flex items-center gap-[16px] justify-end">
+    <div className="flex flex-col sm:flex-row items-end sm:items-center mt-[16px]! sm:mt-[0px]! gap-[8px] sm:gap-[16px] justify-end">
       <span className="text-[16px] font-normal text-white">{content}</span>
       <ReactPaginate
         pageCount={pageCount}
