@@ -25,9 +25,6 @@ const ForgotPasswordForm = () => {
   const { mutate, isPending } = useForgotPassword({
     onSuccess: () => {
       handleSuccess('Email enviado com sucesso! Verifique sua caixa de entrada.');
-      setTimeout(() => {
-        router.push('/redefinir-senha');
-      }, 1000);
     },
     onError: error => handleError(error),
   });
