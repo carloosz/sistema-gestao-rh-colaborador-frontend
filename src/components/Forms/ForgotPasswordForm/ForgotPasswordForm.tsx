@@ -24,8 +24,10 @@ const ForgotPasswordForm = () => {
 
   const { mutate, isPending } = useForgotPassword({
     onSuccess: () => {
-      handleSuccess('Email enviado com sucesso!');
-      router.push('/');
+      handleSuccess('Email enviado com sucesso! Verifique sua caixa de entrada.');
+      setTimeout(() => {
+        router.push('/redefinir-senha');
+      }, 1000);
     },
     onError: error => handleError(error),
   });
@@ -66,11 +68,11 @@ const ForgotPasswordForm = () => {
         />
       </fieldset>
       <button
-        className="w-full h-[44px] text-secondary bg-primary font-bold text-[16px] rounded-[8px]"
+        className="w-full h-[44px] text-secondary bg-primary font-bold text-[16px] rounded-[8px] disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
         type="submit"
         disabled={isPending}
       >
-        Enviar e-mail
+        {isPending ? 'Enviando...' : 'Enviar e-mail'}
       </button>
     </form>
   );
