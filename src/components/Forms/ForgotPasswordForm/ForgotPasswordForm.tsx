@@ -60,7 +60,7 @@ const ForgotPasswordForm = () => {
         <Input
           type="email"
           customClassNames="max-w-[470px]"
-          placeholder="Confirme a nova senha"
+          placeholder="Insira seu e-mail"
           {...register('email')}
           error={errors?.email?.message}
         />
