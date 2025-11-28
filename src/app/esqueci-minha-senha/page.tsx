@@ -7,8 +7,8 @@ import { useRouter } from 'next/navigation';
 const ForgotPasswordPage = () => {
   const router = useRouter();
   return (
-    <main className="bg-primary2 flex">
-      <div className="relative w-[375px] bg-secondary rounded-r-[50px] h-dvh p-[36px]! flex flex-col items-start justify-center no-scrollbar overflow-auto">
+    <main className="bg-primary2 flex lg:justify-start justify-center items-center h-dvh min-h-[600px]">
+      <div className="relative max-w-[375px] lg:h-full h-max w-full bg-secondary rounded-[50px] lg:rounded-l-none p-[36px]! pt-[72px]! lg:pt-[36px]! flex flex-col items-start justify-center">
         <button
           className="absolute top-[20px] left-[20px]"
           type="button"
@@ -22,12 +22,12 @@ const ForgotPasswordPage = () => {
         </span>
         <ForgotPasswordForm />
       </div>
-      <div className="flex flex-col items-center justify-end px-[80px]! mx-auto!">
-        <h1 className="font-normal text-[36px] text-center text-white w-full">
+      <div className="lg:flex hidden flex-col items-center justify-end mx-auto! mt-auto! overflow-hidden">
+        <h1 className="min-w-[788px] font-normal text-[36px] text-center text-white w-full whitespace-nowrap">
           Conectando talentos e oportunidades
         </h1>
         <img
-          className="w-full max-h-full"
+          className="min-w-[788px]"
           src="/img/examples/login_banner.png"
           alt="Login banner"
         />

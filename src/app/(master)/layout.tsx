@@ -14,7 +14,7 @@ const MasterRootLayout = ({
   return (
     <main
       className={twMerge(
-        'h-dvh pb-[60px]! lg:pb-[0]! overflow-auto',
+        'h-dvh pt-[50px]! lg:pt-[0]! pb-[60px]! lg:pb-[0]! overflow-auto',
         pathName === '/solicitacoes' ? 'bg-secondary' : 'bg-primary2',
       )}
     >

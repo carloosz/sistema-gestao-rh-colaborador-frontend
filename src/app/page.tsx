@@ -13,8 +13,8 @@ const LoginPage = () => {
         </span>
         <LoginForm />
       </div>
-      <div className="lg:flex hidden flex-col items-center justify-end mx-auto! overflow-hidden h-full pb-12">
-        <h1 className="min-w-[788px] font-normal text-[36px] text-center text-white w-full whitespace-nowrap mb-8">
+      <div className="lg:flex hidden flex-col items-center justify-end mx-auto! mt-auto! overflow-hidden">
+        <h1 className="min-w-[788px] font-normal text-[36px] text-center text-white w-full whitespace-nowrap">
           Conectando talentos e oportunidades
         </h1>
         <img
