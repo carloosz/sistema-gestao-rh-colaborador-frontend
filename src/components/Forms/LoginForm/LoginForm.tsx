@@ -17,7 +17,6 @@ const LoginForm = () => {
 
   const [openWarningModal, setOpenWarningModal] = useState(false);
   const [openAcceptModal, setOpenAcceptModal] = useState(false);
-
   const {
     register,
     handleSubmit,
@@ -26,11 +25,15 @@ const LoginForm = () => {
   } = useForm<ILoginForm>({
     mode: 'onChange',
     resolver: yupResolver(LoginSchema),
-    // defaultValues: {
-    //   email: 'maria.oliveira@email.com',
-    //   password: '12345678',
-    // },
+    // defaultValues:
+    //   process.env.NODE_ENV === 'development'
+    //     ? {
+    //         email: 'teste@teste.com',
+    //         password: '12345678',
+    //       }
+    //     : undefined,
   });
+
   const passwordValue = watch('password');
 
   const onSubmit: SubmitHandler<ILoginForm> = async (form: ILoginForm) => {

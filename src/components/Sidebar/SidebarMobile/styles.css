@@ -1,0 +1,141 @@
+.aside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  width: 100%;
+  background: rgba(27, 27, 27, 0.8);
+  overflow: hidden;
+  transition: all 0.5s ease-out, background 1s ease-out;
+  transition-delay: 0.2s;
+  z-index: 1;
+  .burger-container {
+    position: relative;
+    display: flex;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: all 0.3s $cubic;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    #burger {
+      width: 18px;
+      height: 8px;
+      position: relative;
+      display: block;
+      margin: -4px auto 0;
+      top: 50%;
+      .bar {
+        width: 100%;
+        height: 1px;
+        display: block;
+        position: relative;
+        background: #fff;
+        transition: all 0.3s $cubic;
+        transition-delay: 0s;
+        &.topBar {
+          transform: translateY(0px) rotate(0deg);
+        }
+        &.btmBar {
+          transform: translateY(6px) rotate(0deg);
+        }
+      }
+    }
+  }
+  .icon {
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+    font-size: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    &.icon-bag {
+      right: 0;
+      top: 0;
+      left: auto;
+      transform: translateX(0px);
+      transition: transform 0.5s $cubic;
+      transition-delay: 0.65s;
+    }
+  }
+  nav.menu {
+    width: 100%;
+    position: relative;
+    padding: 0px 48px 0;
+    list-style: none;
+
+    a,
+    button {
+      display: flex;
+      overflow: hidden;
+      white-space: nowrap;
+      padding-bottom: 8px;
+      height: 60px;
+      gap: 8px;
+      border-bottom: 1px solid #333;
+      margin-top: 5px;
+      position: relative;
+      color: #fff;
+      font-weight: 100;
+      text-decoration: none;
+      font-size: 22px;
+      line-height: 2.35;
+      font-weight: 200;
+      width: 100%;
+    }
+  }
+
+  &.menu-opened {
+    height: 100%;
+    background-color: #1b1b1b;
+    transition: all 0.3s ease-in, background 0.5s ease-in;
+    transition-delay: 0.25s;
+    .burger-container {
+      transform: rotate(90deg);
+      #burger {
+        .bar {
+          transition: all 0.4s $cubic;
+          transition-delay: 0.2s;
+          &.topBar {
+            transform: translateY(4px) rotate(45deg);
+          }
+          &.btmBar {
+            transform: translateY(3px) rotate(-45deg);
+          }
+        }
+      }
+    }
+    nav.menu {
+      a,
+      button {
+        animation-name: fade;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+      }
+    }
+    .icon {
+      &.icon-bag {
+        transform: translateX(75px);
+        transition-delay: 0.3s;
+      }
+    }
+  }
+}
+
+@keyframes fade {
+  0% {
+    transform: scale(1.15) translateY(-30px);
+    opacity: 0;
+  }
+  ,
+  100% {
+    transform: scale(1) translateY(0px) !;
+    opacity: 1!;
+  }
+}

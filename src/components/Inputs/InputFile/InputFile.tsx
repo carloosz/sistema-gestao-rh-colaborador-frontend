@@ -111,10 +111,14 @@ const InputFile: ForwardRefRenderFunction<HTMLInputElement, Props> = (
               htmlFor={id || name}
               className="relative w-full h-[54px] flex items-center justify-between p-[13px_16px]! font-normal rounded-[12px] outline-0 bg-[#0C0C0C]"
             >
-              <span className="w-full text-start text-white2  text-[20px] overflow-hidden text-ellipsis whitespace-nowrap">
+              <span className="w-full text-start text-white2 cursor-pointer text-[20px] overflow-hidden text-ellipsis whitespace-nowrap">
                 {file && file instanceof FileList
                   ? file?.item(0)?.name
-                  : file?.name}
+                  : file?.name
+                  ? file?.name
+                  : !disabled && !readOnly
+                  ? 'Clique e selecione um arquivo'
+                  : undefined}
               </span>
               <img
                 width={30}

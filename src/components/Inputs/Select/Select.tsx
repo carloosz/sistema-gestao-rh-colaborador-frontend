@@ -63,7 +63,7 @@ const SelectCustom: ForwardRefRenderFunction<any, Props> = (
                     <button
                       key={index}
                       type="button"
-                      className="text-[16px] text-primary font-normal"
+                      className="text-[16px] text-white font-normal"
                       onClick={() => {
                         field.onChange(option);
                         setOpenSelect(false);

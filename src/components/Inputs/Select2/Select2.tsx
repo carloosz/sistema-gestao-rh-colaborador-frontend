@@ -40,7 +40,9 @@ const SelectCustom2: ForwardRefRenderFunction<any, Props> = (
             >
               <div className="flex items-center justify-between">
                 <span className="text-[20px] text-white font-normal">
-                  {(field?.value?.label as string) || 'Selecione'}
+                  {(field?.value?.label as string) ||
+                    placeholder ||
+                    'Selecione'}
                 </span>
                 <button
                   type="button"
@@ -63,7 +65,7 @@ const SelectCustom2: ForwardRefRenderFunction<any, Props> = (
                     <button
                       key={index}
                       type="button"
-                      className="text-[20px] text-primary2 font-normal"
+                      className="text-[20px] text-white font-normal"
                       onClick={() => {
                         field.onChange(option);
                         setOpenSelect(false);

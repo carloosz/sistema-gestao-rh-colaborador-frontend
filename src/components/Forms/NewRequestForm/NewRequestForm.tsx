@@ -69,7 +69,7 @@ const NewRequestForm = ({ onClose }: Props) => {
         id={'type'}
         options={typeOptions}
         control={control}
-        placeholder="Escolha o tipo da rescisão"
+        placeholder="Selecione o tipo"
         {...register('type')}
         error={errors?.type?.message}
       />

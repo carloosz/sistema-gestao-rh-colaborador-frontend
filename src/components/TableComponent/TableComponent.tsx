@@ -71,24 +71,38 @@ const TableComponent = ({
                 >
                   <span
                     className={twMerge(
-                      `flex items-center text-center p-[15px_24px]! text-[16px] font-normal text-secondary bg-primary`,
+                      `h-[54px] flex items-center text-center p-[15px_24px]! text-[16px] font-normal text-secondary bg-primary`,
                       index === 0 ? 'rounded-l-[10px]' : '',
                     )}
                   >
                     {header.name}{' '}
                     {header.sort && handleSort && (
-                      <button
-                        className="border-none bg-transparent"
-                        type="button"
-                        onClick={() => handleSort(header?.name, header?.sort)}
-                      >
-                        <img
-                          width={12}
-                          height={12}
-                          src="/img/icons/arrow.svg"
-                          alt="Seta"
-                        />
-                      </button>
+                      <div className="flex flex-col ml-[6px]!">
+                        <button
+                          className="flex items-center justify-center w-[24px] h-[24px] border-none bg-transparent"
+                          type="button"
+                          onClick={() => handleSort(header?.name, 'asc')}
+                        >
+                          <img
+                            width={12}
+                            height={12}
+                            src="/img/icons/arrow-up.svg"
+                            alt="Seta"
+                          />
+                        </button>
+                        <button
+                          className="flex items-center justify-center w-[24px] h-[24px] border-none bg-transparent"
+                          type="button"
+                          onClick={() => handleSort(header?.name, 'desc')}
+                        >
+                          <img
+                            width={12}
+                            height={12}
+                            src="/img/icons/arrow-down.svg"
+                            alt="Seta"
+                          />
+                        </button>
+                      </div>
                     )}
                   </span>
                 </th>
