@@ -30,11 +30,17 @@ const RequestsPage = () => {
   const [openCreateRequestModal, setOpenCreateRequestModal] = useState(false);
   const router = useRouter();
   const [currentPage, setCurrentPage] = useState(1);
+  const [sort, setSort] = useState<string | undefined>(undefined);
 
   const { data, isFetching } = useRequests({
     page: currentPage,
-    pageSize: 9,
+    pageSize: 10,
+    sort: sort?.match('asc') ? 'asc' : 'desc',
   });
+
+  const handleSort = (name: string, sort?: string) => {
+    setSort(`${name}:${sort}`);
+  };
 
   return (
     <div className="flex flex-col pt-[37px]!">
@@ -43,7 +49,7 @@ const RequestsPage = () => {
         <ModalRequest onClose={() => setOpenCreateRequestModal(false)} />
       )}
       <div className="flex flex-col">
-        <span className="text-[40px] text-white font-normal">
+        <span className="text-[32px] text-white font-normal">
           Bem vindo(a) {myInfo?.name}
         </span>
         <h1 className="text-[40px] text-primary font-normal">
@@ -73,6 +79,7 @@ const RequestsPage = () => {
           setPage={setCurrentPage}
           total={data?.totalItems}
           handleView={(id: string) => router.push(`/solicitacoes/ver/${id}`)}
+          handleSort={handleSort}
         />
       )}
     </div>
