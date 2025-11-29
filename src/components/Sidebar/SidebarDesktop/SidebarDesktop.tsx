@@ -14,7 +14,7 @@ const SidebarDesktop = () => {
   return (
     <aside
       className={twMerge(
-        'w-full hidden lg:flex fixed left-0 top-0 bottom-0 bg-primary rounded-r-[10px] border-primary p-[24px]! transition-all flex-col justify-between items-center gap-[40px] z-[99]',
+        'w-full overflow-hidden lg:flex fixed left-0 top-0 bottom-0 bg-primary rounded-r-[10px] border-primary p-[24px]! transition-all flex-col justify-between items-center gap-[40px] z-[99]',
         extend ? 'items-start max-w-[220px]' : 'items-center max-w-[113px]',
       )}
       onMouseEnter={() => setExtend(true)}
