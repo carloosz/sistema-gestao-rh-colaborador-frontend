@@ -80,6 +80,7 @@ const RequestsPage = () => {
           total={data?.totalItems}
           handleView={(id: string) => router.push(`/solicitacoes/ver/${id}`)}
           handleSort={handleSort}
+          pageCount={data?.totalPages}
         />
       )}
     </div>

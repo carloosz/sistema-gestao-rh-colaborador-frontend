@@ -43,11 +43,11 @@ const InputFile: ForwardRefRenderFunction<HTMLInputElement, Props> = (
   const { DocDownload } = useDocDownload();
 
   const fileLink =
-    file instanceof FileList && file
-      ? URL.createObjectURL(file.item(0) as File)
-      : file?.url
-      ? urlConvert(file?.url)
-      : undefined;
+    file instanceof FileList
+      ? file.item(0)
+        ? URL.createObjectURL(file.item(0) as File)
+        : undefined
+      : file?.url;
   const fileLinkArray = fileLink?.split('.');
   const extension =
     file instanceof FileList
