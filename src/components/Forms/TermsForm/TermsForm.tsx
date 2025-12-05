@@ -63,8 +63,9 @@ const TermsForm = ({ onClose, formData }: Props) => {
         setReadTerms(true);
       } else {
         termsEl.addEventListener('scroll', function (e) {
-          console.log(termsEl?.scrollTop);
-          const condition = termsEl.scrollHeight - termsEl.scrollTop === 200;
+          const actualPosition = termsEl.scrollTop + termsEl.clientHeight;
+          const TotalHeight = termsEl.scrollHeight;
+          const condition = actualPosition >= TotalHeight - 1;
           if (condition) {
             setReadTerms(true);
           }
@@ -80,8 +81,9 @@ const TermsForm = ({ onClose, formData }: Props) => {
         setReadPolicy(true);
       } else {
         policyEl.addEventListener('scroll', function (e) {
-          console.log(policyEl?.scrollTop);
-          const condition = policyEl.scrollHeight - policyEl.scrollTop === 200;
+          const actualPosition = policyEl.scrollTop + policyEl.clientHeight;
+          const TotalHeight = policyEl.scrollHeight;
+          const condition = actualPosition >= TotalHeight - 1;
           if (condition) {
             setReadPolicy(true);
           }
