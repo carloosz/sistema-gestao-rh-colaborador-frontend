@@ -62,7 +62,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, Props> = (
             )}
           </div>
         )}
-        <div className="relative w-full flex items-center justify-start rounded-[0.75rem]">
+        <div className={twMerge("relative w-full flex items-center justify-start rounded-[0.75rem]", !!readOnly ? '' : 'bg-[#0C0C0C]')}>
           <MaskedInput
             id={id || name}
             disabled={disabled}
@@ -71,7 +71,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, Props> = (
               !!readOnly
                 ? 'w-full text-white text-[16px] font-normal bg-transparent border-none outline-none'
                 : twMerge(
-                    `w-full text-white2 placeholder:text-primary text-[14px] p-[11.5px]! font-normal rounded-[12px] outline-0 bg-primary2
+                    `w-full text-white placeholder:text-white text-[14px] p-[11.5px]! font-normal rounded-[12px] outline-0 bg-primary2
               `,
                     type === 'password' ? 'pr-[40px]!' : '',
                     error ? 'border-2 border-warning' : '',
