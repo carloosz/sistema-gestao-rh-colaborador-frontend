@@ -94,7 +94,7 @@ const TermsForm = ({ onClose, formData }: Props) => {
 
   return (
     <form
-      className="w-full"
+      className="w-full h-full"
       onSubmit={handleSubmit(onSubmit, errorGroup =>
         handleError('Aceite os termos de uso e política de privacidade'),
       )}
