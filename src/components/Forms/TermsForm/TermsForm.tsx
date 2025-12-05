@@ -138,7 +138,7 @@ const TermsForm = ({ onClose, formData }: Props) => {
           disabled={!readTerms || !readPolicy}
           label={
             <p className="text-white text-[16px] font-normal">
-              Declaro que li e concordo com os Termos de uso e políticas de
+              Declaro que li e aceito os Termos de uso e políticas de
               privacidade.
             </p>
           }
